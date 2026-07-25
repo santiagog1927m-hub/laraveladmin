@@ -33,7 +33,7 @@ class ComputerController extends Controller
     }
      public function index(){
 
-    $pc = Computer::all();
+    $computers = Computer::all();
     return view('computer.index',compact('computers'));
 
 

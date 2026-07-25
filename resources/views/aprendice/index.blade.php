@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1>COMPUTADORES</h1>
-            <a href="{{ route('computer.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Nuevo computador
+            <h1>APRENDICES</h1>
+            <a href="{{ route('aprendice.create') }}" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Nuevo estudiante
             </a>
         </div>
 
@@ -13,15 +13,16 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Marca</th>
-                   
+                    <th>Email</th>
+                    <th>Número celular</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($computers as $computer)
+                @foreach ($aprendices as $aprendice)
                     <tr>
-                        <td>{{ $computer->number }}</td>
-                        <td>{{ $computer->brand }}</td>
+                        <td>{{ $aprendice->name }}</td>
+                        <td>{{ $aprendice->email }}</td>
+                        <td>{{ $aprendice->cell_number }}</td>
                     </tr>
                 @endforeach
             </tbody>

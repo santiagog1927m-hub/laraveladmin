@@ -38,5 +38,14 @@ class TrainingCenterController extends Controller
     return $training_center;
 
     }
+    public function index(){
+
+    $training_centers = Training_center::all();
+    return view('training_center.index',compact('training_centers'));
+
+
+    }
+
+
 
 }

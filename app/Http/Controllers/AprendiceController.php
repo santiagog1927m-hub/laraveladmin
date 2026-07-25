@@ -35,6 +35,15 @@ class AprendiceController extends Controller
     
     return $aprendice;
     }
+     public function index(){
+
+    $aprendices = Aprendice::all();
+    return view('aprendice.index',compact('aprendices'));
+
+
+    }
+
+
 
 
 }

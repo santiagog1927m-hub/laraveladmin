@@ -3,25 +3,24 @@
 @section('content')
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1>COMPUTADORES</h1>
-            <a href="{{ route('computer.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Nuevo computador
+            <h1>CURSOS</h1>
+            <a href="{{ route('course.create') }}" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> NUEVOS CURSOS
             </a>
         </div>
 
         <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Marca</th>
-                   
+                    <th>Numero de curso</th>
+                    <th>Dia</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($computers as $computer)
+                @foreach ($courses as $course)
                     <tr>
-                        <td>{{ $computer->number }}</td>
-                        <td>{{ $computer->brand }}</td>
+                        <td>{{ $course->course_number }}</td>
+                        <td>{{ $course->day }}</td>
                     </tr>
                 @endforeach
             </tbody>
