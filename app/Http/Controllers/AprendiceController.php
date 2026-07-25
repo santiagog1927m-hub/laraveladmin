@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Aprendice;
+use App\Models\Course;
+use App\Models\Computer;
+
+class AprendiceController extends Controller
+{
+    public function consultaCurso(){
+        $aprendiz = Aprendice::find(1);
+        return $aprendiz->course;
+    }
+
+    public function consultaComputador(){
+        $aprendice = Aprendice::find(3);
+        return $aprendice->computer;
+    }
+
+
+
+     public function create (){
+
+    $courses=Course::all();
+
+    $computers=Computer::all();
+
+     return view('aprendice.create',compact('courses','computers'));
+    }
+
+    public function store(Request $request){
+    $aprendice=Aprendice::create($request->all());
+    
+    return $aprendice;
+    }
+
+
+}

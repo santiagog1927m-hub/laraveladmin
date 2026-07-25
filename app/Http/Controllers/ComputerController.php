@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Computer;
+
+class ComputerController extends Controller
+{
+    public function consultaAprendiz(){
+        $compu = Computer::find(3);
+        return $compu->aprendices;
+    }
+
+
+    
+    public function create (){
+
+     return view('computer.create');
+    }
+
+    public function store(Request $request){
+
+    /*$computer= new Computer();
+    $computer->number=$request->number;
+    $computer->brand=$request->brand;
+    $computer->save();*/
+    
+    $computer=Computer::create($request->all());
+
+    return $computer;
+
+    }
+     public function index(){
+
+    $pc = Computer::all();
+    return view('computer.index',compact('computers'));
+
+
+    }
+
+
+}
