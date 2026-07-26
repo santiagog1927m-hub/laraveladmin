@@ -21,6 +21,7 @@
                     <tr>
                         <td>{{ $training_center->name }}</td>
                         <td>{{ $training_center->location }}</td>
+                        <td><a href="{{ route('training_center.show', $training_center->id) }}">Mostrar</a></td>
                     </tr>
                 @endforeach
             </tbody>

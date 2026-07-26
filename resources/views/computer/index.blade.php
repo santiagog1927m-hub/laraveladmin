@@ -22,6 +22,7 @@
                     <tr>
                         <td>{{ $computer->number }}</td>
                         <td>{{ $computer->brand }}</td>
+                        <td><a href="{{ route('computer.show', $computer->id) }}">Mostrar</a></td>
                     </tr>
                 @endforeach
             </tbody>

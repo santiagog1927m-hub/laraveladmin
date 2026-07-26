@@ -21,6 +21,9 @@
                     <tr>
                         <td>{{ $course->course_number }}</td>
                         <td>{{ $course->day }}</td>
+                        <td>{{ $course->area_id}}</td>
+                        <td>{{ $course->training_center_id}}</td>
+                        <td><a href="{{ route('course.show', $course->id) }}">Mostrar</a></td>
                     </tr>
                 @endforeach
             </tbody>

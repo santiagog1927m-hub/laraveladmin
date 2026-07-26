@@ -55,8 +55,10 @@ class TeacherController extends Controller
 
     $teachers = Teacher::all();
     return view('teacher.index',compact('teachers'));
-
-
+    }
+    public function show($id){
+        $profesor = Teacher::find($id);
+        return view('teacher.show', compact('profesor'));
     }
 }
 

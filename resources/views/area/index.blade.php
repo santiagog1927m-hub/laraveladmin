@@ -19,8 +19,7 @@
                         <br>
                         
                         <td>{{ $area->name }}</td>
-                        {{-- <td><a href="{{ route('product.show', $product->id) }}">Mostrar</a></td> --}}
-
+                        <td><a href="{{ route('area.show', $area->id) }}">Mostrar</a></td>
                         <br>
 
                     </tr>

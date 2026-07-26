@@ -1,13 +1,16 @@
-<div class="card text-center">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-body-secondary">
-    2 days ago
-  </div>
-</div>
+<footer class="bg-success text-white text-center py-3 mt-5">
+    <div class="container">
+
+        <p class="mb-1">
+            <strong>Sistema de Gestión Académica</strong>
+        </p>
+
+        <p class="mb-1">
+            Desarrollado por <strong>Santiago Gomez</strong>
+        </p>
+
+        <small>
+            © {{ date('Y') }} - Proyecto ADSO
+
+    </div>
+</footer>

@@ -39,9 +39,12 @@ class AprendiceController extends Controller
 
     $aprendices = Aprendice::all();
     return view('aprendice.index',compact('aprendices'));
-
-
     }
+    public function show($id){
+        $aprendiz = Aprendice::findOrFail($id);
+        return view('aprendice.show', compact('aprendiz'));
+    }
+
 
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>formulario teacher</h1>
+<h1>Formulario Instructores</h1>
 
 <form action="{{route('teacher.store')}}" method="POST" enctype="multipart/form-data">
 
@@ -57,7 +57,7 @@
     <br>
 
 
-<button type="submit">Enviar Formulario:</button>
+<button type="submit">Enviar Formulario</button>
 </form>
 
 

@@ -14,6 +14,8 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Correo</th>
+                    <th>Id de area</th>
+                    <th>Id centro</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +23,9 @@
                     <tr>
                         <td>{{ $teacher->name }}</td>
                         <td>{{ $teacher->email }}</td>
+                        <td>{{ $teacher->area_id}}</td>
+                        <td>{{ $teacher->training_center_id}}</td>
+                        <td><a href="{{ route('teacher.show', $teacher->id) }}">Mostrar</a></td>
                     </tr>
                 @endforeach
             </tbody>

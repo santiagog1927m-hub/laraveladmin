@@ -23,6 +23,9 @@
                         <td>{{ $aprendice->name }}</td>
                         <td>{{ $aprendice->email }}</td>
                         <td>{{ $aprendice->cell_number }}</td>
+                        <td>{{ $aprendice->course_id}}</td>
+                        <td>{{ $aprendice->computer_id}}</td>
+                        <td><a href="{{ route('aprendice.show', $aprendice->id) }}">Mostrar</a></td>
                     </tr>
                 @endforeach
             </tbody>

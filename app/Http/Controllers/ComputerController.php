@@ -35,8 +35,10 @@ class ComputerController extends Controller
 
     $computers = Computer::all();
     return view('computer.index',compact('computers'));
-
-
+    }
+    public function show($id){
+        $computer = Computer::find($id);
+        return view('computer.show', compact('computer'));
     }
 
 
