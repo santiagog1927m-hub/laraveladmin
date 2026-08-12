@@ -39,17 +39,17 @@
 
                     <ul class="dropdown-menu">
 
-                        <li><a class="dropdown-item" href="#">👨‍🏫 Instructores</a></li>
+                        <li><a class="dropdown-item" href="#"> Instructores</a></li>
 
-                        <li><a class="dropdown-item" href="#">👨‍🎓 Aprendices</a></li>
+                        <li><a class="dropdown-item" href="#"> Aprendices</a></li>
 
-                        <li><a class="dropdown-item" href="#">📚 Cursos</a></li>
+                        <li><a class="dropdown-item" href="#"> Cursos</a></li>
 
-                        <li><a class="dropdown-item" href="#">🏢 Centros de Formación</a></li>
+                        <li><a class="dropdown-item" href="#"> Centros de Formación</a></li>
 
-                        <li><a class="dropdown-item" href="#">🏷️ Áreas</a></li>
+                        <li><a class="dropdown-item" href="#">Áreas</a></li>
 
-                        <li><a class="dropdown-item" href="#">💻 Computadores</a></li>
+                        <li><a class="dropdown-item" href="#">Computadores</a></li>
 
                     </ul>
 

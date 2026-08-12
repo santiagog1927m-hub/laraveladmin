@@ -7,39 +7,54 @@ use App\Models\Computer;
 
 class ComputerController extends Controller
 {
-    public function consultaAprendiz(){
+    public function consultaAprendiz()
+    {
         $compu = Computer::find(3);
         return $compu->aprendices;
     }
 
-
-    
-    public function create (){
-
-     return view('computer.create');
+    public function create()
+    {
+        return view('computer.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $computer = Computer::create($request->all());
 
-    /*$computer= new Computer();
-    $computer->number=$request->number;
-    $computer->brand=$request->brand;
-    $computer->save();*/
-    
-    $computer=Computer::create($request->all());
-
-    return $computer;
-
+        return $computer;
     }
-     public function index(){
 
-    $computers = Computer::all();
-    return view('computer.index',compact('computers'));
+    public function index()
+    {
+        $computers = Computer::all();
+
+        return view('computer.index', compact('computers'));
     }
-    public function show($id){
+
+    public function show($id)
+    {
         $computer = Computer::find($id);
+
         return view('computer.show', compact('computer'));
     }
 
+    public function edit(Computer $computer)
+    {
+        return view('computer.edit', compact('computer'));
+    }
 
+    public function update(Request $request, Computer $computer)
+    {
+        $computer->update($request->all());
+
+        return redirect()->route('computer.list');
+    }
+
+    public function destroy(Computer $computer)
+    {
+        $computer->delete();
+
+        return redirect()->route('computer.list');
+    }
 }
