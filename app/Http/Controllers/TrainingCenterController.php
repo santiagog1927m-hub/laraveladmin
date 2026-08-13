@@ -30,7 +30,7 @@ class TrainingCenterController extends Controller
     {
         $training_center = Training_center::create($request->all());
 
-        return $training_center;
+        return redirect()->route('training_center.list');
     }
 
     public function index()

@@ -36,16 +36,19 @@
 
                         <td>
 
+                            <!-- MOSTRAR -->
                             <a href="{{ route('computer.show', $computer->id) }}"
-                               class="btn btn-info btn-sm">
+                               class="btn btn-success btn-sm">
                                 Mostrar
                             </a>
 
+                            <!-- EDITAR -->
                             <a href="{{ route('computer.edit', $computer->id) }}"
                                class="btn btn-warning btn-sm">
                                 Editar
                             </a>
 
+                            <!-- ELIMINAR -->
                             <form action="{{ route('computer.destroy', $computer->id) }}"
                                   method="POST"
                                   style="display:inline;">

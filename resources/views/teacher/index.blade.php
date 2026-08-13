@@ -42,16 +42,19 @@
 
                         <td>
 
+                            <!-- MOSTRAR -->
                             <a href="{{ route('teacher.show', $teacher->id) }}"
-                               class="btn btn-info btn-sm">
+                               class="btn btn-success btn-sm">
                                 Mostrar
                             </a>
 
+                            <!-- EDITAR -->
                             <a href="{{ route('teacher.edit', $teacher->id) }}"
                                class="btn btn-warning btn-sm">
                                 Editar
                             </a>
 
+                            <!-- ELIMINAR -->
                             <form action="{{ route('teacher.destroy', $teacher->id) }}"
                                   method="POST"
                                   style="display:inline;">

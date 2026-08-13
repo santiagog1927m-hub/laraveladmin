@@ -33,16 +33,19 @@
 
                         <td>
 
+                            <!-- MOSTRAR -->
                             <a href="{{ route('area.show', $area->id) }}"
-                               class="btn btn-info btn-sm">
+                               class="btn btn-success btn-sm">
                                 Mostrar
                             </a>
 
+                            <!-- EDITAR -->
                             <a href="{{ route('area.edit', $area->id) }}"
                                class="btn btn-warning btn-sm">
                                 Editar
                             </a>
 
+                            <!-- ELIMINAR -->
                             <form action="{{ route('area.destroy', $area->id) }}"
                                   method="POST"
                                   style="display:inline;">

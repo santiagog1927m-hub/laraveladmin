@@ -44,7 +44,7 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::create($request->all());
 
-        return $teacher;
+        return redirect()->route('teacher.list');
     }
 
     public function index()

@@ -2,63 +2,146 @@
 
 @section('content')
 
-<h1>Formulario Instructores</h1>
+<div class="container mt-4" style="max-width: 700px;">
 
-<form action="{{route('teacher.store')}}" method="POST" enctype="multipart/form-data">
+    <div class="card shadow-sm border-0">
 
-@csrf
+        <!-- ENCABEZADO -->
+        <div class="card-header bg-success text-white">
 
-<label>
-    Nombre:
-    <br>
-    <input type="name" name="name">
-</label>
-<br>
-<br>
-<label>
-    Email:
-    <br>
-    <input type="text" name="email">
-</label>
-<br>
-<br>
+            <h4 class="mb-0 fw-bold">
+                Formulario Instructores
+            </h4>
 
-{{-- {{$areas}} --}}
+            <small>
+                Complete la información del nuevo instructor
+            </small>
 
-<label for="area_id">Area</label>
+        </div>
 
-    <select name="area_id" id="user_id" class="form-control">
-        <option value="">Seleccione un area</option>
+        <!-- FORMULARIO -->
+        <div class="card-body p-4">
 
-        @foreach($areas as $area)
-            <option value="{{ $area->id }}">
-                {{ $area->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+            <form action="{{route('teacher.store')}}" method="POST" enctype="multipart/form-data">
+
+            @csrf
+
+            <label>
+                <label for="name" class="form-label fw-bold text-success">
+                    Nombre:
+                </label>
+
+                <br>
+
+                <input type="text"
+                       name="name"
+                       id="name"
+                       class="form-control"
+                       placeholder="Ingrese el nombre del instructor"
+                       required>
+            </label>
+
+            <br>
+            <br>
+
+            <label>
+                <label for="email" class="form-label fw-bold text-success">
+                    Email:
+                </label>
+
+                <br>
+
+                <input type="text"
+                       name="email"
+                       id="email"
+                       class="form-control"
+                       placeholder="Ingrese el correo electrónico"
+                       required>
+            </label>
+
+            <br>
+            <br>
+
+            {{-- {{$areas}} --}}
+
+            <label for="area_id" class="form-label fw-bold text-success">
+                Area
+            </label>
+
+            <select name="area_id"
+                    id="area_id"
+                    class="form-control"
+                    required>
+
+                <option value="">
+                    Seleccione un area
+                </option>
+
+                @foreach($areas as $area)
+
+                    <option value="{{ $area->id }}">
+                        {{ $area->name }}
+                    </option>
+
+                @endforeach
+
+            </select>
+
+            <br>
+            <br>
 
 
-    {{-- {{$training_centers}} --}}
+            {{-- {{$training_centers}} --}}
 
-<label for="training_center_id">Training center</label>
+            <label for="training_center_id"
+                   class="form-label fw-bold text-success">
+                Training center
+            </label>
 
-    <select name="training_center_id" id="user_id" class="form-control">
-        <option value="">Seleccione un centro de formacion</option>
+            <select name="training_center_id"
+                    id="training_center_id"
+                    class="form-control"
+                    required>
 
-        @foreach($training_centers as $training_center)
-            <option value="{{ $training_center->id }}">
-                {{ $training_center->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+                <option value="">
+                    Seleccione un centro de formacion
+                </option>
+
+                @foreach($training_centers as $training_center)
+
+                    <option value="{{ $training_center->id }}">
+                        {{ $training_center->name }}
+                    </option>
+
+                @endforeach
+
+            </select>
+
+            <br>
+            <br>
 
 
-<button type="submit">Enviar Formulario</button>
-</form>
+            <!-- BOTONES -->
+            <div class="d-flex justify-content-end gap-2">
 
+                <a href="{{ route('teacher.list') }}"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Guardar Instructor
+                </button>
+
+            </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 @endsection

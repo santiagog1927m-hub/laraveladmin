@@ -33,7 +33,7 @@ class AprendiceController extends Controller
     {
         $aprendice = Aprendice::create($request->all());
 
-        return $aprendice;
+        return redirect()->route('aprendice.list');
     }
 
     public function index()

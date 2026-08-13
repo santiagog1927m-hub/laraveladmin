@@ -28,7 +28,7 @@ class AreaController extends Controller
     {
         $area = Area::create($request->all());
 
-        return $area;
+        return redirect()->route('area.list');
     }
 
     public function index()

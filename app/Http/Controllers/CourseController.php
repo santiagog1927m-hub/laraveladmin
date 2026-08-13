@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Area;
 use App\Models\Training_center;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -45,7 +46,7 @@ class CourseController extends Controller
     {
         $course = Course::create($request->all());
 
-        return $course;
+        return redirect()->route('course.list');
     }
 
     public function index()

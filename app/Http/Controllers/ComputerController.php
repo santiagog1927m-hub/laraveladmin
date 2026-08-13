@@ -22,7 +22,7 @@ class ComputerController extends Controller
     {
         $computer = Computer::create($request->all());
 
-        return $computer;
+        return redirect()->route('computer.list');
     }
 
     public function index()

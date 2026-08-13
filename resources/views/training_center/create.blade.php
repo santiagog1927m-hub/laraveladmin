@@ -2,28 +2,92 @@
 
 @section('content')
 
-<h1>formulario training_center</h1>
+<div class="container mt-4" style="max-width: 700px;">
 
-<form action="{{route('training_center.store')}}" method="POST" enctype="multipart/form-data">
+    <div class="card shadow-sm border-0">
 
-@csrf
+        <!-- ENCABEZADO -->
+        <div class="card-header bg-success text-white">
 
-<label>
-    Nombre
-    <br>
-    <input type="text" name="name">
-</label>
-<br>
-<br>
-<label>
-    Ubicacion:
-    <br>
-    <input type="text" name="location">
-</label>
-<br>
+            <h4 class="mb-0 fw-bold">
+                Formulario Training Center
+            </h4>
+
+            <small>
+                Complete la información del nuevo centro de formación
+            </small>
+
+        </div>
 
 
-<button type="submit">Enviar Formulario:</button>
-</form>
+        <!-- FORMULARIO -->
+        <div class="card-body p-4">
+
+            <form action="{{route('training_center.store')}}"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+            @csrf
+
+            <label>
+                <label for="name" class="form-label fw-bold text-success">
+                    Nombre
+                </label>
+
+                <br>
+
+                <input type="text"
+                       name="name"
+                       id="name"
+                       class="form-control"
+                       placeholder="Ingrese el nombre del centro"
+                       required>
+            </label>
+
+            <br>
+            <br>
+
+
+            <label>
+                <label for="location" class="form-label fw-bold text-success">
+                    Ubicación
+                </label>
+
+                <br>
+
+                <input type="text"
+                       name="location"
+                       id="location"
+                       class="form-control"
+                       placeholder="Ingrese la ubicación del centro"
+                       required>
+            </label>
+
+            <br>
+            <br>
+
+
+            <!-- BOTONES -->
+            <div class="d-flex justify-content-end gap-2">
+
+                <a href="{{ route('training_center.list') }}"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Guardar Centro
+                </button>
+
+            </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 @endsection

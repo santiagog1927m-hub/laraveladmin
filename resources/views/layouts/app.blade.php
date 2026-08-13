@@ -8,21 +8,40 @@
 
     @include('includes.dependencias')
 
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
     @include('includes.navbar')
 
-    <div class="container mt-4">
+    <main class="container mt-4">
         @yield('content')
-    </div>
+    </main>
 
     @include('includes.footer')
 
     @include('includes.dependenciasbody')
-
 
 </body>
 

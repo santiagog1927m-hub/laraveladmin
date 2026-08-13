@@ -23,7 +23,7 @@ use App\Http\Controllers\CourseController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
 

@@ -36,16 +36,19 @@
 
                         <td>
 
+                            <!-- MOSTRAR -->
                             <a href="{{ route('training_center.show', $training_center->id) }}"
-                               class="btn btn-info btn-sm">
+                               class="btn btn-success btn-sm">
                                 Mostrar
                             </a>
 
+                            <!-- EDITAR -->
                             <a href="{{ route('training_center.edit', $training_center->id) }}"
                                class="btn btn-warning btn-sm">
                                 Editar
                             </a>
 
+                            <!-- ELIMINAR -->
                             <form action="{{ route('training_center.destroy', $training_center->id) }}"
                                   method="POST"
                                   style="display:inline;">
