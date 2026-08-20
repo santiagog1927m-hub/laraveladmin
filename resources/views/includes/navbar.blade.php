@@ -17,20 +17,17 @@
     </div>
 
     <div class="top-right">
+
         <a href="#">
             <i class="bi bi-question-circle"></i>
             SOPORTE
-        </a>
-
-        <a href="#">
-            <i class="bi bi-gear"></i>
-            CONFIGURACIÓN
         </a>
 
         <span class="country">
             <i class="bi bi-globe"></i>
             CO
         </span>
+
     </div>
 
 </div>
@@ -40,7 +37,6 @@
 
     <div class="navbar-container">
 
-        <!-- LOGO Y NOMBRE -->
         <a href="{{ url('/') }}" class="sena-brand">
 
             <div class="logo-container">
@@ -55,22 +51,17 @@
         </a>
 
 
-        <!-- MENÚ PRINCIPAL -->
         <div class="main-menu">
 
-            <!-- INICIO -->
             <a href="{{ url('/') }}" class="menu-link active">
                 INICIO
             </a>
 
-
-            <!-- ¿QUIÉNES SOMOS? -->
-            <a href="#" class="menu-link">
+            <a href="{{ route('quienes.somos') }}" class="menu-link">
                 ¿QUIÉNES SOMOS?
             </a>
 
 
-            <!-- GESTIÓN -->
             <div class="menu-dropdown">
 
                 <a href="#" class="menu-link dropdown-trigger">
@@ -119,24 +110,17 @@
             </div>
 
 
-
-            <a href="#" class="menu-link">
+            <a href="{{ route('contacto') }}" class="menu-link">
                 CONTÁCTANOS
             </a>
 
-
-
-            <a href="#" class="menu-link">
+            <a href="{{ route('noticias') }}" class="menu-link">
                 NOTICIAS
             </a>
-
-
 
             <a href="#" class="menu-link">
                 EVENTOS
             </a>
-
-
 
             <a href="#" class="menu-link green-link">
                 REPORTES
@@ -145,24 +129,20 @@
         </div>
 
 
-
         <div class="navbar-actions">
-
 
             <a href="#" title="Buscar">
                 <i class="bi bi-search"></i>
             </a>
 
-            <a href="#" title="Perfil">
+            <a href="{{ route('login') }}" title="Iniciar sesión">
                 <i class="bi bi-person"></i>
             </a>
-
 
             <a href="#" title="Notificaciones" class="notification">
                 <i class="bi bi-bell"></i>
                 <span>0</span>
             </a>
-
 
             <a href="#" title="Configuración">
                 <i class="bi bi-gear"></i>
@@ -173,7 +153,6 @@
     </div>
 
 </nav>
-
 
 
 

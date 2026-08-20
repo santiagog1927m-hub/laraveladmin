@@ -73,7 +73,7 @@
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $curso->area_id }}
+                    {{ $curso->area->name ?? 'Sin área' }}
                 </p>
             </div>
 
@@ -85,7 +85,7 @@
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $curso->training_center_id }}
+                    {{ $curso->training_Center->name ?? 'Sin centro' }}
                 </p>
             </div>
 

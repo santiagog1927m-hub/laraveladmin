@@ -27,6 +27,8 @@ Route::get('/', function () {
 });
 
 
+
+
 //Route::get('/consultas',[ConsultasController::class, 'consulta_2']);
 
 
@@ -87,3 +89,17 @@ Route::get('teacher/show/{id}',[TeacherController::class,'show'])->name('teacher
 Route::get('teacher/{teacher}/edit', [TeacherController::class, 'edit'])->name('teacher.edit');
 Route::put('teacher/{teacher}', [TeacherController::class, 'update'])->name('teacher.update');
 Route::delete('teacher/{teacher}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
+
+//quines somos
+
+Route::get('/quienes-somos', function () {return view('quienes-somos');})->name('quienes.somos');
+
+//contacto
+Route::view('/contacto', 'contacto')->name('contacto');
+
+//noticias
+
+Route::view('/noticias', 'noticias')->name('noticias');
+
+//login
+Route::view('/login', 'login')->name('login');

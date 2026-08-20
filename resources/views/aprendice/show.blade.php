@@ -84,7 +84,7 @@
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $aprendiz->course_id }}
+                    {{ $aprendiz->course->course_number ?? 'Sin curso' }} - {{ $aprendiz->course->day ?? '' }}
                 </p>
             </div>
 
@@ -96,7 +96,7 @@
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $aprendiz->computer_id }}
+                    {{ $aprendiz->computer->brand ?? 'Sin computador' }}
                 </p>
             </div>
 
