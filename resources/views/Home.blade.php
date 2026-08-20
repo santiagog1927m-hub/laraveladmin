@@ -2,231 +2,436 @@
 
 @section('content')
 
-<div class="container py-4">
+<div class="home-container">
 
-
-<!-- Título -->
-<div class="text-center mb-5">
-    <h1 class="fw-bold">Sistema de Gestión SENA</h1>
-    <p class="text-muted">
-        Administración de aprendices, cursos, instructores y recursos
-    </p>
-</div>
-
-<!-- Módulos del sistema -->
-<div class="row g-4">
-
-    <!-- Aprendices -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-people-fill fs-1 text-success"></i>
-
-                <h4 class="card-title mt-3">Aprendices</h4>
-
-                <p class="text-muted">
-                    Gestiona los aprendices registrados en el sistema.
-                </p>
-
-                <a href="{{ route('aprendice.list') }}" class="btn btn-success">
-                    Ver aprendices
-                </a>
-            </div>
-        </div>
+    <div class="sena-hero">
+        <img src="{{ asset('img/imagen-home.png') }}" alt="Sistema de Gestión Admin SENA">
     </div>
 
-    <!-- Cursos -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-book-fill fs-1 text-success"></i>
-
-                <h4 class="card-title mt-3">Cursos</h4>
-
-                <p class="text-muted">
-                    Consulta y administra los cursos de formación.
-                </p>
-
-                <a href="{{ route('course.list') }}" class="btn btn-success">
-                    Ver cursos
-                </a>
-            </div>
-        </div>
+    <div class="home-header">
+        <h1>Sistema de <span>Gestión</span></h1>
+        <p>Administración de aprendices, cursos, instructores y recursos</p>
+        <div class="title-line"></div>
     </div>
 
-    <!-- Instructores -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-person-workspace fs-1 text-success"></i>
+    <div class="row g-4">
 
-                <h4 class="card-title mt-3">Instructores</h4>
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
 
-                <p class="text-muted">
-                    Administra los instructores registrados.
-                </p>
+                    <h4>Aprendices</h4>
+                    <p>Gestiona los aprendices registrados en el sistema.</p>
 
-                <a href="{{ route('teacher.list') }}" class="btn btn-success">
-                    Ver instructores
-                </a>
+                    <a href="{{ route('aprendice.list') }}" class="btn-sena">
+                        Ver aprendices
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Áreas de Formación -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-diagram-3-fill fs-1 text-success"></i>
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-book-fill"></i>
+                    </div>
 
-                <h4 class="card-title mt-3">Áreas de Formación</h4>
+                    <h4>Cursos</h4>
+                    <p>Consulta y administra los cursos de formación.</p>
 
-                <p class="text-muted">
-                    Administra las áreas disponibles.
-                </p>
-
-                <a href="{{ route('area.list') }}" class="btn btn-success">
-                    Ver áreas
-                </a>
+                    <a href="{{ route('course.list') }}" class="btn-sena">
+                        Ver cursos
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Centros de Formación -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-building-fill fs-1 text-success"></i>
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
 
-                <h4 class="card-title mt-3">Centros de Formación</h4>
+                    <h4>Instructores</h4>
+                    <p>Administra los instructores registrados.</p>
 
-                <p class="text-muted">
-                    Gestiona los centros de formación.
-                </p>
-
-                <a href="{{ route('training_center.list') }}" class="btn btn-success">
-                    Ver centros
-                </a>
+                    <a href="{{ route('teacher.list') }}" class="btn-sena">
+                        Ver instructores
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Computadores -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body text-center">
-                <i class="bi bi-pc-display fs-1 text-success"></i>
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-diagram-3-fill"></i>
+                    </div>
 
-                <h4 class="card-title mt-3">Computadores</h4>
+                    <h4>Áreas de Formación</h4>
+                    <p>Administra las áreas disponibles para la formación.</p>
 
-                <p class="text-muted">
-                    Controla los computadores disponibles.
-                </p>
-
-                <a href="{{ route('computer.list') }}" class="btn btn-success">
-                    Ver computadores
-                </a>
+                    <a href="{{ route('area.list') }}" class="btn-sena">
+                        Ver áreas
+                    </a>
+                </div>
             </div>
         </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-building-fill"></i>
+                    </div>
+
+                    <h4>Centros de Formación</h4>
+                    <p>Gestiona los centros de formación disponibles.</p>
+
+                    <a href="{{ route('training_center.list') }}" class="btn-sena">
+                        Ver centros
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="sena-card">
+                <div class="sena-card-body">
+                    <div class="icon-box">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+
+                    <h4>Computadores</h4>
+                    <p>Controla los computadores disponibles.</p>
+
+                    <a href="{{ route('computer.list') }}" class="btn-sena">
+                        Ver computadores
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-</div>
+    <hr class="section-divider">
 
+    <div class="section-header">
+        <h2><span>Conócenos</span></h2>
+        <p>Información sobre nuestro sistema de gestión</p>
+        <div class="title-line"></div>
+    </div>
 
-<!-- Separador -->
-<hr class="my-5">
+    <div class="row g-4">
 
+        <div class="col-lg-4 col-md-6">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="bi bi-bullseye"></i>
+                </div>
 
-<!-- Misión, Visión y Contacto -->
-<div class="text-center mb-4">
-    <h2 class="fw-bold">Conócenos</h2>
-    <p class="text-muted">
-        Información sobre nuestro sistema de gestión
-    </p>
-</div>
+                <h3>Misión</h3>
 
-<div class="row g-4">
-
-    <!-- Misión -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-center">
-            <div class="card-body p-4">
-
-                <i class="bi bi-bullseye fs-1 text-success"></i>
-
-                <h3 class="card-title mt-3 fw-bold">
-                    Misión
-                </h3>
-
-                <p class="text-muted">
+                <p>
                     Brindar una plataforma sencilla, organizada y eficiente
                     que permita gestionar la información de aprendices,
                     cursos, instructores y recursos de manera rápida,
-                    segura y accesible, facilitando la administración
-                    de los datos.
+                    segura y accesible.
                 </p>
-
             </div>
         </div>
-    </div>
 
+        <div class="col-lg-4 col-md-6">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="bi bi-eye-fill"></i>
+                </div>
 
-    <!-- Visión -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-center">
-            <div class="card-body p-4">
+                <h3>Visión</h3>
 
-                <i class="bi bi-eye-fill fs-1 text-success"></i>
-
-                <h3 class="card-title mt-3 fw-bold">
-                    Visión
-                </h3>
-
-                <p class="text-muted">
+                <p>
                     Ser una plataforma reconocida por su facilidad de uso,
                     organización e innovación, ofreciendo herramientas
-                    que permitan gestionar la información de forma
-                    eficiente y adaptándose a las necesidades de
-                    nuestros usuarios.
+                    que permitan gestionar la información de forma eficiente.
                 </p>
-
             </div>
         </div>
-    </div>
 
+        <div class="col-lg-4 col-md-12">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
 
-    <!-- Contacto -->
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100 text-center">
-            <div class="card-body p-4">
+                <h3>Contacto</h3>
 
-                <i class="bi bi-envelope-fill fs-1 text-success"></i>
-
-                <h3 class="card-title mt-3 fw-bold">
-                    Contacto
-                </h3>
-
-                <p class="text-muted">
+                <p>
                     Si tienes alguna pregunta o necesitas información
                     sobre el sistema, puedes comunicarte con nosotros.
                 </p>
 
-                <p class="mb-2">
-                    <i class="bi bi-envelope me-2"></i>
-                    santiagogomez06g@sena.com
-                </p>
+                <div class="contact-info">
+                    <p>
+                        <i class="bi bi-envelope-fill"></i>
+                        santiagogomez06g@sena.com
+                    </p>
 
-                <p class="mb-0">
-                    <i class="bi bi-telephone-fill me-2"></i>
-                    +57 3207717129
-                </p>
-
+                    <p>
+                        <i class="bi bi-telephone-fill"></i>
+                        +57 3207717129
+                    </p>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>
 
-</div>
+
+<style>
+
+:root {
+    --sena-green: #39A900;
+    --sena-dark: #00843D;
+    --sena-black: #111111;
+    --sena-light: #f5f7f6;
+    --sena-gray: #6c757d;
+    --sena-border: #e2e8e5;
+}
+
+.home-container {
+    background: var(--sena-light);
+    min-height: 100vh;
+    padding: 0 0 70px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--sena-black);
+    margin-bottom: 10px;
+}
+
+.home-header h1 span,
+.section-header h2 span {
+    color: var(--sena-green);
+}
+
+.home-header p,
+.section-header p {
+    color: var(--sena-gray);
+    margin: 0;
+}
+
+.title-line {
+    width: 55px;
+    height: 4px;
+    background: var(--sena-green);
+    margin: 18px auto 0;
+    border-radius: 5px;
+}
+
+.sena-hero {
+    width: 100%;
+    height: 520px;
+    margin-bottom: 45px;
+    overflow: hidden;
+}
+
+.sena-hero img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sena-card {
+    background: #fff;
+    border: 1px solid var(--sena-border);
+    border-radius: 12px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.sena-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sena-green);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.sena-card-body {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(57, 169, 0, 0.10);
+    color: var(--sena-green);
+    font-size: 30px;
+}
+
+.sena-card h4 {
+    color: var(--sena-black);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.sena-card p {
+    color: var(--sena-gray);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 48px;
+}
+
+.btn-sena {
+    display: inline-block;
+    background: var(--sena-green);
+    color: #fff;
+    border: 2px solid var(--sena-green);
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-sena:hover {
+    background: var(--sena-dark);
+    border-color: var(--sena-dark);
+    color: #fff;
+}
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: var(--sena-border);
+    margin: 70px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: var(--sena-black);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid var(--sena-border);
+    border-radius: 12px;
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sena-green);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.09);
+}
+
+.info-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--sena-green);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.info-card h3 {
+    color: var(--sena-black);
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: var(--sena-gray);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--sena-border);
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.contact-info i {
+    color: var(--sena-green);
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+
+    .home-container {
+        padding: 30px 15px 50px;
+    }
+
+    .home-header h1 {
+        font-size: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 26px;
+    }
+
+    .sena-hero {
+        height: 300px;
+    }
+
+    .sena-card-body {
+        padding: 25px 20px;
+    }
+}
+
+</style>
 
 @endsection
+
+
+
+
