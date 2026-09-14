@@ -22,7 +22,6 @@ class Course extends Model
 
 
 
-
     // Un curso pertenece a una area
     public function area(){
         return $this->belongsTo(Area::class);

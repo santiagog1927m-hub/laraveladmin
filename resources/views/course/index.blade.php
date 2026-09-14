@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -9,7 +8,7 @@
             <h1>CURSOS</h1>
 
             <a href="{{ route('course.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> NUEVOS CURSOS
+                <i class="bi bi-plus-circle"></i> NUEVO CURSO
             </a>
 
         </div>
@@ -22,6 +21,7 @@
                     <th>Día</th>
                     <th>Área</th>
                     <th>Centro de formación</th>
+                    <th>Imagen</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -29,42 +29,62 @@
             <tbody>
 
                 @foreach ($courses as $course)
-
                     <tr>
 
-                        <td>{{ $course->course_number }}</td>
+                        {{-- NÚMERO DE CURSO --}}
+                        <td>
+                            {{ $course->course_number }}
+                        </td>
 
-                        <td>{{ $course->day }}</td>
+                        {{-- DÍA --}}
+                        <td>
+                            {{ $course->day }}
+                        </td>
 
-                        <td>{{ $course->area_id }}</td>
+                        {{-- ÁREA --}}
+                        <td>
+                            {{ $course->area_id }}
+                        </td>
 
-                        <td>{{ $course->training_center_id }}</td>
+                        {{-- CENTRO DE FORMACIÓN --}}
+                        <td>
+                            {{ $course->training_center_id }}
+                        </td>
 
+                        {{-- IMAGEN --}}
+                        <td>
+                            @if ($course->urlFoto)
+                                <img src="{{ asset('storage/images/' . $course->urlFoto) }}" alt="Imagen del curso"
+                                    width="80" height="60" style="object-fit: cover; border-radius: 5px;">
+                            @else
+                                <span class="text-muted">
+                                    Sin imagen
+                                </span>
+                            @endif
+                        </td>
+
+                        {{-- ACCIONES --}}
                         <td>
 
-                            <!-- MOSTRAR -->
-                            <a href="{{ route('course.show', $course->id) }}"
-                               class="btn btn-success btn-sm">
+                            {{-- MOSTRAR --}}
+                            <a href="{{ route('course.show', $course->id) }}" class="btn btn-success btn-sm">
                                 Mostrar
                             </a>
 
-                            <!-- EDITAR -->
-                            <a href="{{ route('course.edit', $course->id) }}"
-                               class="btn btn-warning btn-sm">
+                            {{-- EDITAR --}}
+                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-warning btn-sm">
                                 Editar
                             </a>
 
-                            <!-- ELIMINAR -->
-                            <form action="{{ route('course.destroy', $course->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                            {{-- ELIMINAR --}}
+                            <form action="{{ route('course.destroy', $course->id) }}" method="POST"
+                                style="display:inline;">
 
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este curso?')">
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('¿Está seguro de eliminar este curso?')">
                                     Eliminar
                                 </button>
 
@@ -73,7 +93,6 @@
                         </td>
 
                     </tr>
-
                 @endforeach
 
             </tbody>
@@ -81,5 +100,4 @@
         </table>
 
     </div>
-
 @endsection

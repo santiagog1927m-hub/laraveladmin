@@ -30,14 +30,16 @@ class TrainingCenterController extends Controller
     {
         $training_center = Training_center::create($request->all());
 
-        return redirect()->route('training_center.list');
+        return response()->json($training_center);
+
+        
     }
 
     public function index()
     {
         $training_centers = Training_center::all();
 
-        return view('training_center.index', compact('training_centers'));
+        return response()->json($training_centers);
     }
 
     public function show($id)

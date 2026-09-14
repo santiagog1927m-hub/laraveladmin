@@ -6,7 +6,7 @@
 
     <div class="card shadow-sm border-0">
 
-        <!-- ENCABEZADO -->
+        
         <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
 
             <div>
@@ -27,10 +27,9 @@
         </div>
 
 
-        <!-- INFORMACIÓN -->
         <div class="card-body p-4">
 
-            <!-- ID -->
+            
             <div class="mb-3 border-bottom pb-2">
                 <label class="form-label text-success fw-bold">
                     ID
@@ -42,7 +41,7 @@
             </div>
 
 
-            <!-- NOMBRE -->
+            
             <div class="mb-3 border-bottom pb-2">
                 <label class="form-label text-success fw-bold">
                     Nombre del Instructor
@@ -54,7 +53,6 @@
             </div>
 
 
-            <!-- CORREO -->
             <div class="mb-3 border-bottom pb-2">
                 <label class="form-label text-success fw-bold">
                     Correo del Instructor
@@ -66,33 +64,33 @@
             </div>
 
 
-            <!-- ÁREA -->
+            
             <div class="mb-3 border-bottom pb-2">
                 <label class="form-label text-success fw-bold">
                     Área
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $profesor->area_id }}
+                    {{ $profesor->area->name ?? 'Sin área' }}
                 </p>
             </div>
 
 
-            <!-- CENTRO -->
+            
             <div class="mb-3">
                 <label class="form-label text-success fw-bold">
                     Centro de Formación
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $profesor->training_center_id }}
+                    {{ $profesor->training_center->name ?? 'Sin centro' }}
                 </p>
             </div>
 
         </div>
 
 
-        <!-- PIE -->
+        
         <div class="card-footer bg-light text-end">
 
             <a href="{{ route('teacher.list') }}"

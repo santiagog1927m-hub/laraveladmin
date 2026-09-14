@@ -84,7 +84,7 @@
                 </label>
 
                 <p class="fs-5 mb-0">
-                    {{ $aprendiz->course->course_number ?? 'Sin curso' }} - {{ $aprendiz->course->day ?? '' }}
+                    {{ $aprendiz->course->course_number ?? 'Sin curso' }}
                 </p>
             </div>
 

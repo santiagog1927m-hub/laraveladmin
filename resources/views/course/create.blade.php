@@ -24,7 +24,8 @@
         <div class="card-body p-4">
 
             <form action="{{ route('course.store') }}"
-                  method="POST">
+                  method="POST"
+                  enctype="multipart/form-data">
 
                 @csrf
 
@@ -96,7 +97,7 @@
 
 
                 <!-- CENTRO DE FORMACIÓN -->
-                <div class="mb-4">
+                <div class="mb-3">
 
                     <label for="training_center_id"
                            class="form-label fw-bold text-success">
@@ -121,6 +122,23 @@
                         @endforeach
 
                     </select>
+
+                </div>
+
+
+                <!-- IMAGEN -->
+                <div class="mb-4">
+
+                    <label for="urlFoto"
+                           class="form-label fw-bold text-success">
+                        Imagen del curso
+                    </label>
+
+                    <input type="file"
+                           name="urlFoto"
+                           id="urlFoto"
+                           class="form-control-file"
+                           accept="image/*">
 
                 </div>
 

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('course_number');
             $table->string('day', 50);
+
             //FK1
             $table->unsignedBigInteger('area_id')->nullable();
             $table->foreign('area_id')

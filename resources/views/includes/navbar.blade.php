@@ -1,36 +1,4 @@
-<div class="top-navbar">
 
-    <div class="top-left">
-        <span class="brand-top">SENA CAUCA</span>
-
-        <a href="{{ url('/') }}" class="top-link active-top">
-            ADMIN
-        </a>
-
-        <a href="#" class="top-link">
-            INFORMACIÓN
-        </a>
-
-        <a href="#" class="top-link">
-            AYUDA
-        </a>
-    </div>
-
-    <div class="top-right">
-
-        <a href="#">
-            <i class="bi bi-question-circle"></i>
-            SOPORTE
-        </a>
-
-        <span class="country">
-            <i class="bi bi-globe"></i>
-            CO
-        </span>
-
-    </div>
-
-</div>
 
 
 <nav class="main-navbar">
@@ -118,11 +86,11 @@
                 NOTICIAS
             </a>
 
-            <a href="#" class="menu-link">
+            <a href="{{ route('eventos') }}" class="menu-link">
                 EVENTOS
             </a>
 
-            <a href="#" class="menu-link green-link">
+            <a href="{{ route('reportes') }}" class="menu-link green-link">
                 REPORTES
             </a>
 
@@ -131,9 +99,19 @@
 
         <div class="navbar-actions">
 
-            <a href="#" title="Buscar">
-                <i class="bi bi-search"></i>
-            </a>
+            <details class="search-menu">
+                <summary title="Buscar" aria-label="Abrir buscador">
+                    <i class="bi bi-search"></i>
+                </summary>
+
+                <form action="{{ route('search') }}" method="GET" class="search-form">
+                    <label class="visually-hidden" for="search">Buscar</label>
+                    <input id="search" name="q" type="search" value="{{ request('q') }}" placeholder="Buscar..." required>
+                    <button type="submit" aria-label="Buscar">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </details>
 
             <a href="{{ route('login') }}" title="Iniciar sesión">
                 <i class="bi bi-person"></i>
@@ -416,6 +394,63 @@
         color: var(--sena-green);
     }
 
+    .search-menu {
+        position: relative;
+    }
+
+    .search-menu summary {
+        color: var(--sena-dark);
+        cursor: pointer;
+        font-size: 21px;
+        list-style: none;
+    }
+
+    .search-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .search-menu summary:hover {
+        color: var(--sena-green);
+    }
+
+    .search-form {
+        position: absolute;
+        top: 39px;
+        right: -8px;
+        display: flex;
+        align-items: center;
+        width: 260px;
+        padding: 6px;
+        background: var(--sena-white);
+        border: 1px solid var(--sena-border);
+        border-radius: 6px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        z-index: 1100;
+    }
+
+    .search-form input {
+        width: 100%;
+        border: 0;
+        padding: 7px 9px;
+        outline: 0;
+        font-size: 13px;
+    }
+
+    .search-form button {
+        border: 0;
+        border-left: 1px solid var(--sena-border);
+        background: var(--sena-white);
+        color: var(--sena-dark);
+        padding: 5px 9px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .search-form button:hover {
+        color: var(--sena-green);
+    }
+
     .notification span {
         position: absolute;
         top: -9px;
@@ -450,6 +485,7 @@
         .navbar-actions {
             gap: 15px;
         }
+
     }
 
     @media (max-width: 900px) {

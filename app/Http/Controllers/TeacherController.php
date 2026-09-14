@@ -51,6 +51,8 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::all();
 
+        return response()->json($teachers);
+
         return view('teacher.index', compact('teachers'));
     }
 

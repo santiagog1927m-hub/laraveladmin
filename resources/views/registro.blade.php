@@ -2,96 +2,87 @@
 
 @section('content')
 
-<div class="login-container">
+<div class="register-container">
 
-    <div class="login-card">
+    <div class="register-card">
 
-        <div class="login-logo">
+        <div class="register-logo">
             <div class="logo-circle">
-                <i class="bi bi-person-fill"></i>
+                <i class="bi bi-person-plus-fill"></i>
             </div>
         </div>
 
-        <h1>Iniciar sesión</h1>
+        <h1>Crear cuenta</h1>
 
-        <p class="login-description">
-            Ingresa tus datos para acceder al Sistema de Gestión SENA.
+        <p class="register-description">
+            Regístrate para acceder al Sistema de Gestión SENA.
         </p>
 
-        <form>
+        <form method="POST" action="{{ route('registro.store') }}">
+            @csrf
+
+            @if ($errors->any())
+                <div class="form-errors" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <div class="form-group">
+                <label for="name">Nombre completo</label>
 
-                <label for="email">
-                    Correo electrónico
-                </label>
+                <div class="input-box">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Ingresa tu nombre" required autocomplete="name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
 
                 <div class="input-box">
                     <i class="bi bi-envelope-fill"></i>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Ingresa tu correo"
-                    >
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Ingresa tu correo" required autocomplete="email">
                 </div>
-
             </div>
 
             <div class="form-group">
-
-                <label for="password">
-                    Contraseña
-                </label>
+                <label for="password">Contraseña</label>
 
                 <div class="input-box">
                     <i class="bi bi-lock-fill"></i>
-
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Ingresa tu contraseña"
-                    >
+                    <input type="password" id="password" name="password" placeholder="Crea una contraseña" required autocomplete="new-password">
                 </div>
-
             </div>
 
-            <div class="login-options">
+            <div class="form-group">
+                <label for="password_confirmation">Confirmar contraseña</label>
 
-                <label class="remember">
-                    <input type="checkbox">
-                    <span>Recordarme</span>
-                </label>
-
-                <a href="#">
-                    ¿Olvidaste tu contraseña?
-                </a>
-
+                <div class="input-box">
+                    <i class="bi bi-lock-fill"></i>
+                    <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirma tu contraseña" required autocomplete="new-password">
+                </div>
             </div>
 
-            <button type="button" class="btn-login">
-                Iniciar sesión
-            </button>
+            <button type="submit" class="btn-register">Registrarme</button>
 
         </form>
 
-        <div class="login-footer">
-            <span>¿No tienes una cuenta?</span>
-            <a href="{{ route('registro') }}">Crear cuenta</a>
+        <div class="register-footer">
+            <span>¿Ya tienes una cuenta?</span>
+            <a href="{{ route('login') }}">Iniciar sesión</a>
         </div>
 
     </div>
 
 </div>
 
-
 <style>
 
-* {
-    box-sizing: border-box;
-}
-
-.login-container {
+.register-container {
     width: 100%;
     min-height: calc(100vh - 70px);
     background: #f5f7f6;
@@ -101,7 +92,7 @@
     padding: 50px 15px;
 }
 
-.login-card {
+.register-card {
     width: 100%;
     max-width: 430px;
     background: #ffffff;
@@ -111,7 +102,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.login-logo {
+.register-logo {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -129,7 +120,7 @@
     font-size: 32px;
 }
 
-.login-card h1 {
+.register-card h1 {
     text-align: center;
     color: #111111;
     font-size: 30px;
@@ -137,7 +128,7 @@
     margin-bottom: 10px;
 }
 
-.login-description {
+.register-description {
     text-align: center;
     color: #6c757d;
     font-size: 14px;
@@ -147,6 +138,21 @@
 
 .form-group {
     margin-bottom: 20px;
+}
+
+.form-errors {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #f1b7b7;
+    border-radius: 7px;
+    background: #fff4f4;
+    color: #a71d2a;
+    font-size: 13px;
+}
+
+.form-errors ul {
+    margin: 0;
+    padding-left: 18px;
 }
 
 .form-group label {
@@ -178,7 +184,6 @@
     padding: 10px 14px 10px 42px;
     outline: none;
     font-size: 14px;
-    transition: 0.3s;
 }
 
 .input-box input:focus {
@@ -186,37 +191,7 @@
     box-shadow: 0 0 0 3px rgba(57, 169, 0, 0.10);
 }
 
-.login-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    font-size: 13px;
-}
-
-.remember {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #6c757d;
-    cursor: pointer;
-}
-
-.remember input {
-    accent-color: #39A900;
-}
-
-.login-options a {
-    color: #39A900;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.login-options a:hover {
-    color: #00843D;
-}
-
-.btn-login {
+.btn-register {
     width: 100%;
     height: 46px;
     background: #39A900;
@@ -226,15 +201,14 @@
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn-login:hover {
+.btn-register:hover {
     background: #00843D;
     border-color: #00843D;
 }
 
-.login-footer {
+.register-footer {
     text-align: center;
     margin-top: 25px;
     padding-top: 20px;
@@ -243,37 +217,11 @@
     color: #6c757d;
 }
 
-.login-footer a {
+.register-footer a {
     color: #39A900;
     text-decoration: none;
     font-weight: 700;
     margin-left: 5px;
-}
-
-.login-footer a:hover {
-    color: #00843D;
-}
-
-@media (max-width: 480px) {
-
-    .login-container {
-        padding: 35px 15px;
-    }
-
-    .login-card {
-        padding: 30px 22px;
-    }
-
-    .login-card h1 {
-        font-size: 26px;
-    }
-
-    .login-options {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
 }
 
 </style>

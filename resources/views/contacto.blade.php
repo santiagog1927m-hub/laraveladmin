@@ -87,7 +87,7 @@
     box-sizing: border-box;
 }
 
-.contact-container {
+.contact-container { 
     width: 100%;
     min-height: 100vh;
     background: #f5f7f6;

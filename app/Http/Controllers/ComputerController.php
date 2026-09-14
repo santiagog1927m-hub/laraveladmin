@@ -29,6 +29,8 @@ class ComputerController extends Controller
     {
         $computers = Computer::all();
 
+        return response()->json($computers);
+
         return view('computer.index', compact('computers'));
     }
 

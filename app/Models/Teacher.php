@@ -16,6 +16,10 @@ class Teacher extends Model
         'training_center_id'
     ];
 
+     protected $guarded = [
+        'urlFoto'
+    ];
+
 
 
 

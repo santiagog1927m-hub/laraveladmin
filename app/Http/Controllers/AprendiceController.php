@@ -33,6 +33,16 @@ class AprendiceController extends Controller
     {
         $aprendice = Aprendice::create($request->all());
 
+        //ADJUNTAR EL PDF
+         $file=$request->file("urlFoto");
+
+         $nombreArchivo = "foto_".time().".".$file->guessExtension();
+         $request->file('urlFoto')->storeAs('public/images', $nombreArchivo );
+
+         $aprendice->urlFoto = $nombreArchivo;
+         $aprendice->save();
+
+
         return redirect()->route('aprendice.list');
     }
 
@@ -40,7 +50,7 @@ class AprendiceController extends Controller
     {
         $aprendices = Aprendice::all();
 
-        return view('aprendice.index', compact('aprendices'));
+          return response()->json($aprendices);
     }
 
     public function show($id)

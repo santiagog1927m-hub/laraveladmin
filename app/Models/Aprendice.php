@@ -18,6 +18,11 @@ class Aprendice extends Model
         'computer_id'
     ];
 
+     protected $guarded = [
+        'urlFoto'
+    ];
+
+
 
 
 

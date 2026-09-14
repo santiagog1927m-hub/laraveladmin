@@ -9,6 +9,8 @@ use App\Http\Controllers\TrainingCenterController;
 use App\Http\Controllers\AprendiceController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -24,7 +26,9 @@ use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('Home');
-});
+})->name('home');
+
+Route::get('/buscar', [SearchController::class, 'index'])->name('search');
 
 
 
@@ -103,3 +107,15 @@ Route::view('/noticias', 'noticias')->name('noticias');
 
 //login
 Route::view('/login', 'login')->name('login');
+
+// registro
+Route::middleware('guest')->group(function () {
+    Route::get('/registro', [AuthController::class, 'create'])->name('registro');
+    Route::post('/registro', [AuthController::class, 'store'])->name('registro.store');
+});
+
+//eventos
+Route::view('/eventos', 'eventos')->name('eventos');
+
+//reportes
+Route::view('/reportes', 'reportes')->name('reportes');

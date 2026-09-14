@@ -35,6 +35,8 @@ class AreaController extends Controller
     {
         $areas = Area::all();
 
+        return response()->json($areas);
+
         return view('area.index', compact('areas'));
     }
 
