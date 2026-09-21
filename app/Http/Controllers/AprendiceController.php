@@ -33,17 +33,18 @@ class AprendiceController extends Controller
     {
         $aprendice = Aprendice::create($request->all());
 
+        return response()->json($aprendice);
+
         //ADJUNTAR EL PDF
-         $file=$request->file("urlFoto");
+        $file=$request->file("urlFoto");
 
-         $nombreArchivo = "foto_".time().".".$file->guessExtension();
-         $request->file('urlFoto')->storeAs('public/images', $nombreArchivo );
+        $nombreArchivo = "foto_".time().".".$file->guessExtension();
+        $request->file('urlFoto')->storeAs('public/images', $nombreArchivo );
 
-         $aprendice->urlFoto = $nombreArchivo;
-         $aprendice->save();
+        $aprendice->urlFoto = $nombreArchivo;
+        $aprendice->save();
 
-
-        return redirect()->route('aprendice.list');
+        //return redirect()->route('aprendice.list');
     }
 
     public function index()
@@ -59,7 +60,9 @@ class AprendiceController extends Controller
     {
         $aprendiz = Aprendice::findOrFail($id);
 
-        return view('aprendice.show', compact('aprendiz'));
+        return response()->json($aprendiz);
+
+        //return view('aprendice.show', compact('aprendiz'));
     }
 
     public function edit(Aprendice $aprendice)
@@ -78,12 +81,18 @@ class AprendiceController extends Controller
     {
         $aprendice->update($request->all());
 
+        return response()->json($aprendice);
+
         return redirect()->route('aprendice.list');
     }
 
     public function destroy(Aprendice $aprendice)
     {
         $aprendice->delete();
+
+        return response()->json([
+        'mensaje' => 'Aprendiz eliminado correctamente'
+    ]);
 
         return redirect()->route('aprendice.list');
     }

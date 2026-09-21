@@ -43,6 +43,8 @@ class TeacherController extends Controller
 {
     $teacher = Teacher::create($request->all());
 
+    return response()->json($teacher);
+
     // ADJUNTAR LA IMAGEN
     $file = $request->file("urlFoto");
 
@@ -69,6 +71,8 @@ class TeacherController extends Controller
     {
         $profesor = Teacher::find($id);
 
+        return response()->json($profesor);
+
         return view('teacher.show', compact('profesor'));
     }
 
@@ -87,12 +91,18 @@ class TeacherController extends Controller
     {
         $teacher->update($request->all());
 
+        return response()->json($teacher);
+
         return redirect()->route('teacher.list');
     }
 
     public function destroy(Teacher $teacher)
     {
         $teacher->delete();
+
+        return response()->json([
+        'mensaje' => 'Profesor eliminado correctamente'
+    ]);
 
         return redirect()->route('teacher.list');
     }

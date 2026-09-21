@@ -30,7 +30,6 @@ use App\Http\Controllers\TeacherController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-    //AREA
 
     // AREAS
 
@@ -40,20 +39,68 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::get('area/show/{id}', [AreaController::class, 'show'])->name('area.show');
 
+    Route::put('area/{area}', [AreaController::class, 'update']);
 
+    Route::delete('area/{area}', [AreaController::class, 'destroy']);
+ 
+    //COMPUTERS
+
+    Route::post('computer/store', [ComputerController::class, 'store']);
+
+    Route::get('computer/list', [ComputerController::class, 'index']);
+
+    Route::get('computer/show/{id}', [ComputerController::class, 'show']);
+
+    Route::put('computer/{computer}', [ComputerController::class, 'update']);
+
+    Route::delete('computer/{computer}', [ComputerController::class, 'destroy']);
+
+    //TRAINING CENTER
+
+    Route::post('training_center/store', [TrainingCenterController::class, 'store']);
 
     Route::get('training_center/list', [TrainingCenterController::class, 'index']);
 
-    Route::get('aprendice/list', [AprendiceController::class, 'index'])->name('aprendice.list');
+    Route::get('training_center/show/{id}', [TrainingCenterController::class, 'show']);
 
-    Route::get('computer/list', [ComputerController::class, 'index'])->name('computer.list');
+    Route::put('training_center/{training_center}', [TrainingCenterController::class, 'update']);
 
-    
+    Route::delete('training_center/{training_center}', [TrainingCenterController::class, 'destroy']);
 
-    Route::get('course/list', [CourseController::class, 'index'])->name('course.list');
+    //APRENDICES
 
-    Route::get('teacher/list', [TeacherController::class, 'index'])->name('teacher.list');
-    
-    
+    Route::post('aprendice/store', [AprendiceController::class, 'store']);
+
+    Route::get('aprendice/list', [AprendiceController::class, 'index']);
+
+    Route::get('aprendice/show/{id}', [AprendiceController::class, 'show']);
+
+    Route::put('aprendice/{aprendice}', [AprendiceController::class, 'update']);
+
+    Route::delete('aprendice/{aprendice}', [AprendiceController::class, 'destroy']);
+
+    //CURSOS
+
+    Route::post('course/store', [CourseController::class, 'store']);
+
+    Route::get('course/list', [CourseController::class, 'index']);
+
+    Route::get('course/show/{id}', [CourseController::class, 'show']);
+
+    Route::put('course/{course}', [CourseController::class, 'update']);
+
+    Route::delete('course/{course}', [CourseController::class, 'destroy']);
+
+    //TEACHER
+
+    Route::post('teacher/store', [TeacherController::class, 'store']);
+
+    Route::get('teacher/list', [TeacherController::class, 'index']);
+
+    Route::get('teacher/show/{id}', [TeacherController::class, 'show']);
+
+    Route::put('teacher/{teacher}', [TeacherController::class, 'update']);
+
+    Route::delete('teacher/{teacher}', [TeacherController::class, 'destroy']);
    
 

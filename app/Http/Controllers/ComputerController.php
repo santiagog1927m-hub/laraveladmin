@@ -22,7 +22,9 @@ class ComputerController extends Controller
     {
         $computer = Computer::create($request->all());
 
-        return redirect()->route('computer.list');
+        return response()->json($computer);
+
+        //return redirect()->route('computer.list');
     }
 
     public function index()
@@ -38,7 +40,9 @@ class ComputerController extends Controller
     {
         $computer = Computer::find($id);
 
-        return view('computer.show', compact('computer'));
+        return response()->json($computer);
+
+        //return view('computer.show', compact('computer'));
     }
 
     public function edit(Computer $computer)
@@ -50,12 +54,18 @@ class ComputerController extends Controller
     {
         $computer->update($request->all());
 
+        return response()->json($computer);
+
         return redirect()->route('computer.list');
     }
 
     public function destroy(Computer $computer)
     {
         $computer->delete();
+
+        return response()->json([
+        'mensaje' => 'Computador eliminado correctamente'
+    ]);
 
         return redirect()->route('computer.list');
     }

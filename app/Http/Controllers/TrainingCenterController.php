@@ -34,7 +34,9 @@ class TrainingCenterController extends Controller
     {
         $training_center = Training_center::create($request->all());
 
-        return redirect()->route('training_center.list');
+        return response()->json($training_center);
+
+        //return redirect()->route('training_center.list');
     }
 
     // Mostrar todos los centros
@@ -52,7 +54,9 @@ class TrainingCenterController extends Controller
     {
         $centro = Training_center::find($id);
 
-        return view('training_center.show', compact('centro'));
+        return response()->json($centro);
+
+        //return view('training_center.show', compact('centro'));
     }
 
     // Mostrar formulario para editar
@@ -66,6 +70,8 @@ class TrainingCenterController extends Controller
     {
         $training_center->update($request->all());
 
+        return response()->json($training_center);
+
         return redirect()->route('training_center.list');
     }
 
@@ -73,7 +79,10 @@ class TrainingCenterController extends Controller
     public function destroy(Training_center $training_center)
     {
         $training_center->delete();
-
+        
+        return response()->json([
+        'mensaje' => 'Centro de formación eliminado correctamente'
+    ]);
         return redirect()->route('training_center.list');
     }
 }

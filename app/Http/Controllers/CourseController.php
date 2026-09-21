@@ -46,6 +46,8 @@ class CourseController extends Controller
     {
         $course = Course::create($request->all());
 
+        return response()->json($course);
+
         return redirect()->route('course.list');
     }
 
@@ -61,6 +63,8 @@ class CourseController extends Controller
     public function show($id)
     {
         $curso = Course::find($id);
+
+        return response()->json($curso);
 
         return view('course.show', compact('curso'));
     }
@@ -80,12 +84,18 @@ class CourseController extends Controller
     {
         $course->update($request->all());
 
+        return response()->json($course);
+
         return redirect()->route('course.list');
     }
 
     public function destroy(Course $course)
     {
         $course->delete();
+
+        return response()->json([
+        'mensaje' => 'Curso eliminado correctamente'
+    ]);
 
         return redirect()->route('course.list');
     }

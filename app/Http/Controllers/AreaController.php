@@ -28,7 +28,9 @@ class AreaController extends Controller
     {
         $area = Area::create($request->all());
 
-        return redirect()->route('area.list');
+        return response()->json($area);
+
+        //return redirect()->route('area.list');
     }
 
     public function index()
@@ -44,7 +46,9 @@ class AreaController extends Controller
     {
         $area = Area::find($id);
 
-        return view('area.show', compact('area'));
+        return response()->json($area);
+
+        //return view('area.show', compact('area'));
     }
 
     public function edit(Area $area)
@@ -56,12 +60,17 @@ class AreaController extends Controller
     {
         $area->update($request->all());
 
+        return response()->json($area);
+
         return redirect()->route('area.list');
     }
 
     public function destroy(Area $area)
     {
         $area->delete();
+        return response()->json([
+        'mensaje' => 'Área eliminada correctamente']);
+
 
         return redirect()->route('area.list');
     }

@@ -28,9 +28,6 @@ Route::get('/', function () {
     return view('Home');
 })->name('home');
 
-Route::get('/buscar', [SearchController::class, 'index'])->name('search');
-
-
 
 
 //Route::get('/consultas',[ConsultasController::class, 'consulta_2']);
