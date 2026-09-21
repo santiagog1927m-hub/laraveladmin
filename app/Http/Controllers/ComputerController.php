@@ -31,7 +31,7 @@ class ComputerController extends Controller
 
         return response()->json($computers);
 
-        return view('computer.index', compact('computers'));
+        //return view('computer.index', compact('computers'));
     }
 
     public function show($id)

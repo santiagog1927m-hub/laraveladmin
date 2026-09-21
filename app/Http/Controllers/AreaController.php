@@ -37,7 +37,7 @@ class AreaController extends Controller
 
         return response()->json($areas);
 
-        return view('area.index', compact('areas'));
+        //return view('area.index', compact('areas'));
     }
 
     public function show($id)

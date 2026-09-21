@@ -30,6 +30,16 @@ use App\Http\Controllers\TeacherController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+    //AREA
+
+    // AREAS
+
+    Route::post('area/store', [AreaController::class, 'store'])->name('area.store');
+
+    Route::get('area/list', [AreaController::class, 'index'])->name('area.list');
+
+    Route::get('area/show/{id}', [AreaController::class, 'show'])->name('area.show');
+
 
 
     Route::get('training_center/list', [TrainingCenterController::class, 'index']);
@@ -38,7 +48,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::get('computer/list', [ComputerController::class, 'index'])->name('computer.list');
 
-    Route::get('area/list', [AreaController::class, 'index'])->name('area.list');
+    
 
     Route::get('course/list', [CourseController::class, 'index'])->name('course.list');
 

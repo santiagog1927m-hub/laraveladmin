@@ -1,3 +1,4 @@
+```php
 @extends('layouts.app')
 
 @section('content')
@@ -126,23 +127,6 @@
                 </div>
 
 
-                <!-- IMAGEN -->
-                <div class="mb-4">
-
-                    <label for="urlFoto"
-                           class="form-label fw-bold text-success">
-                        Imagen del curso
-                    </label>
-
-                    <input type="file"
-                           name="urlFoto"
-                           id="urlFoto"
-                           class="form-control-file"
-                           accept="image/*">
-
-                </div>
-
-
                 <!-- BOTONES -->
                 <div class="d-flex justify-content-end gap-2">
 
@@ -167,3 +151,4 @@
 </div>
 
 @endsection
+```

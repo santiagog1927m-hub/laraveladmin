@@ -46,16 +46,7 @@ class CourseController extends Controller
     {
         $course = Course::create($request->all());
 
-        //ADJUNTAR EL PDF
-         $file=$request->file("urlFoto");
-
-         $nombreArchivo = "foto_".time().".".$file->guessExtension();
-         $request->file('urlFoto')->storeAs('public/images', $nombreArchivo );
-
-         $course->urlFoto = $nombreArchivo;
-         $course->save();
-
-         return redirect()->route('course.list');
+        return redirect()->route('course.list');
     }
 
     public function index()
@@ -64,7 +55,7 @@ class CourseController extends Controller
 
         return response()->json($courses);
 
-        return view('course.index', compact('courses'));
+        //return view('course.index', compact('courses'));
     }
 
     public function show($id)

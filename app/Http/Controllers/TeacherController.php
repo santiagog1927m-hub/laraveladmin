@@ -39,13 +39,22 @@ class TeacherController extends Controller
             compact('areas', 'training_centers')
         );
     }
-
     public function store(Request $request)
-    {
-        $teacher = Teacher::create($request->all());
+{
+    $teacher = Teacher::create($request->all());
 
-        return redirect()->route('teacher.list');
-    }
+    // ADJUNTAR LA IMAGEN
+    $file = $request->file("urlFoto");
+
+    $nombreArchivo = "foto_" . time() . "." . $file->guessExtension();
+
+    $request->file('urlFoto')->storeAs('public/images', $nombreArchivo);
+
+    $teacher->urlFoto = $nombreArchivo;
+    $teacher->save();
+
+    return redirect()->route('teacher.list');
+}
 
     public function index()
     {
@@ -53,7 +62,7 @@ class TeacherController extends Controller
 
         return response()->json($teachers);
 
-        return view('teacher.index', compact('teachers'));
+        //return view('teacher.index', compact('teachers'));
     }
 
     public function show($id)

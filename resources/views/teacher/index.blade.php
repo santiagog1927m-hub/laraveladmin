@@ -22,6 +22,7 @@
                     <th>Correo</th>
                     <th>Id de área</th>
                     <th>Id centro</th>
+                    <th>Imagen</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -39,6 +40,25 @@
                         <td>{{ $teacher->area_id }}</td>
 
                         <td>{{ $teacher->training_center_id }}</td>
+
+                        {{-- IMAGEN --}}
+                        <td>
+                            @if ($teacher->urlFoto)
+
+                                <img src="{{ asset('storage/images/' . $teacher->urlFoto) }}"
+                                     alt="Imagen del instructor"
+                                     width="80"
+                                     height="60"
+                                     style="object-fit: cover; border-radius: 5px;">
+
+                            @else
+
+                                <span class="text-muted">
+                                    Sin imagen
+                                </span>
+
+                            @endif
+                        </td>
 
                         <td>
 

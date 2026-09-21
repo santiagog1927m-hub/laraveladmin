@@ -90,7 +90,6 @@
             <br>
             <br>
 
-
             {{-- {{$training_centers}} --}}
 
             <label for="training_center_id"
@@ -120,6 +119,19 @@
             <br>
             <br>
 
+            <!-- IMAGEN -->
+            <label for="urlFoto" class="form-label fw-bold text-success">
+                Imagen del instructor
+            </label>
+
+            <input type="file"
+                   name="urlFoto"
+                   id="urlFoto"
+                   class="form-control"
+                   accept="image/*">
+
+            <br>
+            <br>
 
             <!-- BOTONES -->
             <div class="d-flex justify-content-end gap-2">
