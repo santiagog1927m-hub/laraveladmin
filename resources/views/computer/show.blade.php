@@ -19,7 +19,7 @@
                 </small>
             </div>
 
-            <a href="{{ route('computer.list') }}"
+            <a href="{{ route('computer.index') }}"
                class="btn btn-light btn-sm">
                 Volver
             </a>
@@ -71,7 +71,7 @@
        
         <div class="card-footer bg-light text-end">
 
-            <a href="{{ route('computer.list') }}"
+            <a href="{{ route('computer.index') }}"
                class="btn btn-success">
                 Regresar a la lista
             </a>

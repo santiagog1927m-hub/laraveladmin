@@ -99,20 +99,6 @@
 
         <div class="navbar-actions">
 
-            <details class="search-menu">
-                <summary title="Buscar" aria-label="Abrir buscador">
-                    <i class="bi bi-search"></i>
-                </summary>
-
-                <form action="{{ route('search') }}" method="GET" class="search-form">
-                    <label class="visually-hidden" for="search">Buscar</label>
-                    <input id="search" name="q" type="search" value="{{ request('q') }}" placeholder="Buscar..." required>
-                    <button type="submit" aria-label="Buscar">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </form>
-            </details>
-
             <a href="{{ route('login') }}" title="Iniciar sesión">
                 <i class="bi bi-person"></i>
             </a>

@@ -12,20 +12,15 @@ class Computer extends Model
     
     protected $fillable = [
         'number',
-        'brand'
-    ];
-
-     protected $guarded = [
-        'urlFoto'
-    ];
-
-
-
-
-
+        'brand' ,
+        'urlFoto',
+        'imagen_url',
+        'imagen_public_id'
+       ];
 
     // Un computador tiene muchos aprendices
-    public function aprendice(){
+    public function aprendice()
+    {
         return $this->hasOne(Aprendice::class);
     }
 }

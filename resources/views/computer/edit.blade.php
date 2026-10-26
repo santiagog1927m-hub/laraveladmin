@@ -21,7 +21,7 @@
                        name="number"
                        id="number"
                        class="form-control"
-                       value="{{ $computer->number }}"
+                       value="{{ old('brand', $computer['brand']) }}"
                        required>
 
             </div>
@@ -36,7 +36,7 @@
                        name="brand"
                        id="brand"
                        class="form-control"
-                       value="{{ $computer->brand }}"
+                       value="{{ old('brand', $computer['brand']) }}"
                        required>
 
             </div>
